@@ -1,5 +1,5 @@
 // Offline support for the app shell, and opening the app from a low-stock notification.
-const CACHE = "eksoch-inventory-manager-v1";
+const CACHE = "eksoch-inventory-manager-v2";
 const SHELL = ["./", "index.html", "styles.css", "app.js", "pro-codes.js", "manifest.webmanifest", "privacy.html",
   "icons/icon-192.png", "icons/icon-512.png"];
 

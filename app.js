@@ -956,7 +956,14 @@ function viewPro() {
     main.innerHTML = `<h2>⭐ Pro</h2><div class="card">
       <p>✅ <strong>Pro is unlocked</strong> on this device.</p>${PRO_FEATURES}
       <p class="muted small">Your code is saved only on this device. To use Pro on another device, enter the same code there.</p>
-      <button class="btn danger small" id="rmPro" type="button">Remove the code from this device</button></div>`;
+      <button class="btn danger small" id="rmPro" type="button">Remove the code from this device</button></div>
+      ${!DEMO && firstRun() ? `<div class="card">
+        <h3>Next: choose how to start</h3>
+        <p><strong>Set up your shop</strong>: add your shop name and currency, then your first product. Takes about a minute.</p>
+        <p><a class="btn primary" href="#" id="goSetup">Set up my shop</a></p>
+        <p><strong>Just testing?</strong> Explore every Pro feature now with a sample gift shop, including profit reports and CSV export. Nothing is saved.</p>
+        <p><a class="btn" href="?demo=1#reports">▶ Explore Pro with the demo shop</a></p></div>` : ""}`;
+    $("#goSetup")?.addEventListener("click", (ev) => { ev.preventDefault(); location.hash = ""; route(); });
     $("#rmPro").addEventListener("click", () => {
       if (!confirm("Remove your Pro code from this device? Keep a copy of it so you can enter it again.")) return;
       store.set(K.pro, ""); proActive = false; toast("Pro code removed"); route();
