@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eksoch Inventory Manager</title>
+  <meta name="description" content="Simple inventory management for small businesses: products, stock levels, low-stock alerts, purchases, sales and profit, all on your own device.">
+  <meta name="theme-color" content="#0f3b3a">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap top">
+      <div class="brand">
+        <img src="icons/icon-192.png" width="44" height="44" alt="">
+        <div>
+          <h1>Eksoch Inventory Manager</h1>
+          <p id="shopLine">Stock, sales and profit for your small business</p>
+        </div>
+      </div>
+      <span id="demoBadge" class="badge" hidden>Demo mode</span>
+      <span id="proBadge" class="badge" hidden>⭐ Pro</span>
+    </div>
+    <nav class="wrap tabs" id="tabs" aria-label="Sections" hidden>
+      <a href="#dashboard" data-page="dashboard">📊 Dashboard</a>
+      <a href="#products" data-page="products">📦 Products <span id="lowBadge" class="count" hidden></span></a>
+      <a href="#sales" data-page="sales">🧾 Sales</a>
+      <a href="#purchases" data-page="purchases">🚚 Purchases</a>
+      <a href="#history" data-page="history">🕘 Stock history</a>
+      <a href="#reports" data-page="reports">📈 Reports</a>
+      <a href="#pro" data-page="pro">⭐ Pro</a>
+      <a href="#settings" data-page="settings">⚙️ Settings</a>
+    </nav>
+  </header>
+
+  <main class="wrap" id="main" tabindex="-1"><p class="loading">Loading…</p></main>
+
+  <footer class="wrap foot">
+    <span>Your data stays on this device. Download a backup now and then. </span>
+    <a href="privacy.html">Privacy policy</a>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="pro-codes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
